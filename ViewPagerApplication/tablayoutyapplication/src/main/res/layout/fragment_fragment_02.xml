@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#DF8601"
+             tools:context=".Fragment_02">
+
+    <TextView
+            android:id="@+id/f_02_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="fragment num 2"
+            android:textColor="@android:color/white"/>
+
+</FrameLayout>
