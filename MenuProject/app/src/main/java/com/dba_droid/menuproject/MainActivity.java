@@ -3,8 +3,11 @@ package com.dba_droid.menuproject;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -32,6 +35,17 @@ public class MainActivity extends AppCompatActivity {
 //                 adapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item, data);
                  adapter = ArrayAdapter.createFromResource(this, R.array.dayofweek, android.R.layout.simple_spinner_item);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    Log.i("TAG", "onItemSelected, pos: " + position + ", id: " + id);
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                    Log.i("TAG", "onNothingSelected");
+                }
+            });
             spinner.setAdapter(adapter);
         }
     }
